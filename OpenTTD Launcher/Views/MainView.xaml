@@ -1,0 +1,31 @@
+﻿<Window x:Class="OpenTTD_Launcher.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenTTD_Launcher.Views"
+        mc:Ignorable="d"
+        Height="330" 
+        Width="320"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        
+        >
+    <Border Background="#272537"
+            CornerRadius="10"
+            Margin="10">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="OpenTTD Launcher" HorizontalAlignment="Center" FontSize="30" Foreground='LightGray'/>
+            <Button x:Name="autoLaunch" Content="Enable Auto Game Lauch" Margin="10" Padding="5" />
+            <Button x:Name="autoClose" Content="Enable Auto Launcher Close" Margin="10" Padding="5"/>
+            <Button x:Name="exePath" Content="Change path openttd.exe" Margin="10"  Padding="5"/>
+            <Button x:Name="configPath" Content="Change path openttd.cfg" Margin="10" Padding="5"/>
+            <Button x:Name="launchGame" Margin="10" Padding="5">
+                <TextBlock Text="Launch Game" HorizontalAlignment="Center" FontSize="30"/>
+            </Button>
+        </StackPanel>
+    </Border>
+</Window>
