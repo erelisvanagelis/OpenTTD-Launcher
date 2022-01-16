@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:OpenTTD_Launcher.Views"
+        xmlns:local="clr-namespace:OpenTTD_Launcher.Views" xmlns:viewmodels="clr-namespace:OpenTTD_Launcher.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
         Height="330" 
         Width="320"
@@ -11,19 +11,18 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen"
-        
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing"
         >
     <Border Background="#272537"
             CornerRadius="10"
             Margin="10">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock Text="OpenTTD Launcher" HorizontalAlignment="Center" FontSize="30" Foreground='LightGray'/>
-            <Button x:Name="autoLaunch" Content="Enable Auto Game Lauch" Margin="10" Padding="5" />
-            <Button x:Name="autoClose" Content="Enable Auto Launcher Close" Margin="10" Padding="5"/>
-            <Button x:Name="exePath" Content="Change path openttd.exe" Margin="10"  Padding="5"/>
-            <Button x:Name="configPath" Content="Change path openttd.cfg" Margin="10" Padding="5"/>
-            <Button x:Name="launchGame" Margin="10" Padding="5">
+            <Button x:Name="ToggleAutoLaunch" Content="{Binding Path=AutoLaunch, Mode=OneWay}" Margin="10" Padding="5" />
+            <Button x:Name="ToggleAutoClose" Content="{Binding Path=AutoClose, Mode=OneWay}" Margin="10" Padding="5" />
+            <Button x:Name="exePath" Content="{Binding Path=ExePath, Mode=OneWay}" Margin="10"  Padding="5" Click="exePath_Click"/>
+            <Button x:Name="configPath" Content="{Binding Path=ConfigPath, Mode=OneWay}" Margin="10" Padding="5" Click="configPath_Click"/>
+            <Button x:Name="LaunchGame" Margin="10" Padding="5">
                 <TextBlock Text="Launch Game" HorizontalAlignment="Center" FontSize="30"/>
             </Button>
         </StackPanel>
